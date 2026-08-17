@@ -4,7 +4,7 @@
 
 ## 🌐 Live Demo
 
-🚀 Coming soon with GitHub Pages
+🚀 https://naveenkumar2028.github.io/html-css-pokemon-devboard/
 
 ## 📸 Preview
 
