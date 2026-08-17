@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevBoard ⚡ | Developer Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-ball">◉</span>
+            <span class="brand-code">&lt;/&gt;</span>
+            <strong>DevBoard</strong>
+            <span class="brand-bolt">⚡</span>
+        </div>
+
+        <nav>
+
+            <a class="nav-item active">
+                <span>🏠</span>
+                <b>Dashboard</b>
+            </a>
+
+            <a class="nav-item">
+                <span>☑️</span>
+                <b>Tasks</b>
+            </a>
+
+            <a class="nav-item">
+                <span>📄</span>
+                <b>Notes</b>
+            </a>
+
+            <a class="nav-item">
+                <span>📊</span>
+                <b>Activity</b>
+            </a>
+
+            <a class="nav-item">
+                <span>💼</span>
+                <b>Projects</b>
+            </a>
+
+            <a class="nav-item">
+                <span>🏆</span>
+                <b>Achievements</b>
+            </a>
+
+            <a class="nav-item">
+                <span>⚙️</span>
+                <b>Settings</b>
+            </a>
+
+        </nav>
+
+        <!-- TRAINER -->
+
+        <div class="sidebar-bottom">
+
+            <div class="trainer-card">
+
+                <div class="trainer-avatar">
+                    🧑‍💻
+                </div>
+
+                <div class="trainer-info">
+                    <strong>Trainer</strong>
+                    <span>Level 5</span>
+                    <span>XP 260 / 500</span>
+                </div>
+
+                <div class="trainer-progress">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="buddy-card">
+
+                <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                    alt="Pikachu"
+                >
+
+                <div>
+                    <strong>Pikachu</strong>
+                    <span>Your Buddy ⚡</span>
+                </div>
+
+            </div>
+
+
+            <div class="socials">
+
+                <a href="https://github.com/" target="_blank">◉</a>
+                <a href="https://linkedin.com/" target="_blank">in</a>
+                <a href="#">♥</a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BUTTONS -->
+
+        <div class="top-controls">
+
+            <button id="muteBtn" title="Toggle Sound">
+                🔊
+            </button>
+
+            <button id="themeBtn" title="Toggle Theme">
+                ☀️
+            </button>
+
+        </div>
+
+
+        <!-- ================= HERO ================= -->
+
+        <header class="hero">
+
+            <div class="hero-glow"></div>
+
+            <!-- PIKACHU -->
+
+            <div class="hero-pokemon pikachu">
+
+                <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                    alt="Pikachu"
+                >
+
+            </div>
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    ⚡ TRAIN • CODE • EVOLVE
+                </div>
+
+                <h1>
+                    Good day,
+                    <span>Developer!</span>
+                    👋
+                </h1>
+
+                <p id="currentDate" class="date">
+                    Loading date...
+                </p>
+
+                <div class="xp-heading">
+
+                    <span>Developer XP</span>
+
+                    <strong>
+                        260 / 500 XP
+                    </strong>
+
+                </div>
+
+                <div class="xp-bar">
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLOCK + CHARIZARD -->
+
+            <div class="hero-right">
+
+                <div class="clock">
+
+                    <strong id="clock">
+                        00:00:00 AM
+                    </strong>
+
+                    <span>
+                        ● LIVE TIME
+                    </span>
+
+                </div>
+
+                <div class="charizard">
+
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+                        alt="Charizard"
+                    >
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card purple">
+
+                <div class="stat-icon">
+                    🎯
+                </div>
+
+                <div>
+                    <strong id="totalTasks">0</strong>
+                    <span>Total Tasks</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card green">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <strong id="completedTasks">0</strong>
+                    <span>Completed</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card orange">
+
+                <div class="stat-icon">
+                    🔥
+                </div>
+
+                <div>
+                    <strong id="streak">0</strong>
+                    <span>Day Streak</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TASK + NOTES ================= -->
+
+        <section class="content-grid">
+
+            <!-- TASK CARD -->
+
+            <div class="card tasks-card">
+
+                <div class="card-heading">
+
+                    <span>
+                        🎯 TODAY'S QUEST
+                    </span>
+
+                    <b>
+                        +10 XP
+                    </b>
+
+                </div>
+
+                <h2>
+                    My Tasks
+                </h2>
+
+                <div class="task-input">
+
+                    <input
+                        id="taskInput"
+                        type="text"
+                        placeholder="Add a new quest..."
+                    >
+
+                    <button id="addTask">
+                        ⚡ Add Quest
+                    </button>
+
+                </div>
+
+                <div id="taskList" class="task-list"></div>
+
+
+                <!-- CHARMANDER -->
+
+                <div class="card-pokemon charmander">
+
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+                        alt="Charmander"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTES CARD -->
+
+            <div class="card notes-card">
+
+                <div class="card-heading">
+
+                    <span>
+                        📋 TRAINER NOTES
+                    </span>
+
+                    <b class="saved">
+                        Saved
+                    </b>
+
+                </div>
+
+                <h2>
+                    Quick Notes
+                </h2>
+
+                <textarea
+                    id="notes"
+                    placeholder="Write your ideas, goals or coding notes..."
+                ></textarea>
+
+
+                <!-- SQUIRTLE -->
+
+                <div class="card-pokemon squirtle">
+
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+                        alt="Squirtle"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIVITY + PROJECTS ================= -->
+
+        <section class="content-grid lower-grid">
+
+            <!-- ACTIVITY -->
+
+            <div class="card activity-card">
+
+                <div class="card-heading">
+
+                    <span>
+                        🟡 BATTLE HISTORY
+                    </span>
+
+                    <small>
+                        Last 12 weeks
+                    </small>
+
+                </div>
+
+                <h2>
+                    Coding Activity
+                </h2>
+
+                <div id="heatmap" class="heatmap"></div>
+
+                <div class="heatmap-legend">
+
+                    <span>Less</span>
+
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+
+                    <span>More</span>
+
+                </div>
+
+
+                <!-- BULBASAUR -->
+
+                <div class="card-pokemon bulbasaur">
+
+                    <img
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                        alt="Bulbasaur"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+
+            <div class="card projects-card">
+
+                <div class="card-heading">
+
+                    <span>
+                        🟡 POKÉDEX
+                    </span>
+
+                    <small>
+                        Choose your next evolution
+                    </small>
+
+                </div>
+
+                <h2>
+                    My Projects
+                </h2>
+
+
+                <div class="projects">
+
+                    <!-- PROJECT 1 -->
+
+                    <article class="project electric">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/135.png"
+                                alt="Jolteon"
+                            >
+
+                        </div>
+
+                        <div class="type">
+                            ⚡ ELECTRIC
+                        </div>
+
+                        <h3>
+                            Portfolio Website
+                        </h3>
+
+                        <p>
+                            A responsive personal portfolio
+                            built with HTML, CSS and JavaScript.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+
+                        <a href="#">
+                            View Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <article class="project water">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/134.png"
+                                alt="Vaporeon"
+                            >
+
+                        </div>
+
+                        <div class="type">
+                            💧 WATER
+                        </div>
+
+                        <h3>
+                            Weather App
+                        </h3>
+
+                        <p>
+                            A weather application displaying
+                            real-time weather information.
+                        </p>
+
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>API</span>
+                        </div>
+
+                        <a href="#">
+                            View Project →
+                        </a>
+
+                    </article>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <article class="project ghost">
+
+                        <div class="project-image">
+
+                            <img
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png"
+                                alt="Gengar"
+                            >
+
+                        </div>
+
+                        <div class="type">
+                            👻 GHOST
+                        </div>
+
+                        <h3>
+                            Quiz App
+                        </h3>
+
+                        <p>
+                            An interactive quiz application
+                            with score tracking and questions.
+                        </p>
+
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>DOM</span>
+                        </div>
+
+                        <a href="#">
+                            View Project →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <span>
+                Built with ❤️ using HTML, CSS & JavaScript
+            </span>
+
+            <span>
+                © <span id="footerYear"></span>
+                DevBoard ⚡
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
