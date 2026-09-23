@@ -78,10 +78,9 @@ Because the project uses only static frontend files, no package installation or 
 
 ## 🔮 Future Improvements
 
-* GitHub API integration
-* Persistent notes using Local Storage
-* Dynamic developer statistics
-* GitHub Pages deployment
+* GitHub API integration for live developer statistics
+* Optional export/import of tasks and notes
+* Keyboard-focus improvements and broader accessibility support
 * More interactive dashboard features
 
 ## 👨‍💻 Author
